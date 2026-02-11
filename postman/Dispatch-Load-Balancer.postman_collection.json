@@ -1,0 +1,88 @@
+﻿{
+  "info": {
+    "name": "Dispatch Load Balancer API",
+    "_postman_id": "f5f34767-3c54-4f7b-a44d-9a30f0b3d5be",
+    "description": "Collection for Backend Assignment - Dispatch Load Balancer",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Orders",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"orders\": [\n    {\n      \"orderId\": \"ORD001\",\n      \"latitude\": 12.9716,\n      \"longitude\": 77.5946,\n      \"address\": \"MG Road, Bangalore, Karnataka, India\",\n      \"packageWeight\": 10,\n      \"priority\": \"HIGH\"\n    },\n    {\n      \"orderId\": \"ORD002\",\n      \"latitude\": 12.9352,\n      \"longitude\": 77.6245,\n      \"address\": \"Koramangala, Bangalore, Karnataka, India\",\n      \"packageWeight\": 15,\n      \"priority\": \"MEDIUM\"\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/dispatch/orders",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "dispatch",
+            "orders"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Vehicles",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"vehicles\": [\n    {\n      \"vehicleId\": \"VEH001\",\n      \"capacity\": 100,\n      \"currentLatitude\": 12.9716,\n      \"currentLongitude\": 77.6413,\n      \"currentAddress\": \"Indiranagar, Bangalore, Karnataka, India\"\n    },\n    {\n      \"vehicleId\": \"VEH002\",\n      \"capacity\": 80,\n      \"currentLatitude\": 12.9352,\n      \"currentLongitude\": 77.6245,\n      \"currentAddress\": \"Koramangala, Bangalore, Karnataka, India\"\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/dispatch/vehicles",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "dispatch",
+            "vehicles"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Dispatch Plan",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/dispatch/plan",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "dispatch",
+            "plan"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
